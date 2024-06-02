@@ -20,4 +20,5 @@ public class Message implements Serializable {
   private String code;
   @JsonProperty("description")
   private String description;
+
 }
