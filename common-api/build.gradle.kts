@@ -1,3 +1,4 @@
+
 plugins {
     id("java")
     id("io.freefair.lombok") version "8.6"
@@ -22,4 +23,8 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.getByName<Jar>("jar") {
+    enabled = true
 }
