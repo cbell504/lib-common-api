@@ -1,3 +1,3 @@
-rootProject.name = "common-api"
+rootProject.name = "lib-common-api"
 
 include("common-api")
