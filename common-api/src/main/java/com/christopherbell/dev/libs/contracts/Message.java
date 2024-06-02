@@ -1,4 +1,4 @@
-package com.christopherbell.dev.libs;
+package com.christopherbell.dev.libs.contracts;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
