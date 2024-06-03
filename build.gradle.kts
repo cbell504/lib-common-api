@@ -5,8 +5,8 @@ plugins {
     `maven-publish`
 }
 
-group = "com.christopherbell.dev.libs"
-version = "1.0-SNAPSHOT"
+group = "com.christopherbell.dev"
+version = "1.0"
 
 repositories {
     mavenCentral()
