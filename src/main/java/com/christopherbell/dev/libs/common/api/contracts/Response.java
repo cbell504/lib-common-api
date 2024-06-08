@@ -20,12 +20,14 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public abstract class Response implements Serializable {
+public class Response<T> implements Serializable {
 
   @JsonProperty("httpStatus")
   private HttpStatus httpStatus;
   @JsonProperty("messages")
   private List<Message> messages;
+  @JsonProperty("payload")
+  private T payload;
   @JsonProperty("requestId")
   private UUID requestId;
   @JsonProperty("success")
