@@ -12,12 +12,16 @@ import org.springframework.http.HttpStatus;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * This class represents a base level response class with common fields that every response should contain.
+ */
 @Data
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class Response implements Serializable {
+
   @JsonProperty("httpStatus")
   private HttpStatus httpStatus;
   @JsonProperty("messages")

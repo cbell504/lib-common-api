@@ -1,4 +1,3 @@
-
 plugins {
     id("java")
     id("io.freefair.lombok") version "8.6"
@@ -7,10 +6,6 @@ plugins {
 
 group = "com.christopherbell.dev"
 version = "1.0"
-
-repositories {
-    mavenCentral()
-}
 
 dependencies {
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
@@ -22,12 +17,9 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
-
-tasks.getByName<Jar>("jar") {
-    enabled = true
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 publishing {
@@ -46,4 +38,16 @@ publishing {
             from(components["java"])
         }
     }
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+tasks.getByName<Jar>("jar") {
+    enabled = true
 }
