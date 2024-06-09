@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import org.springframework.http.HttpStatus;
 
 import java.io.Serializable;
 import java.util.List;
@@ -15,15 +14,13 @@ import java.util.List;
 /**
  * This class represents a base level response class with common fields that every response should contain.
  */
-@Data
-@SuperBuilder
 @AllArgsConstructor
-@NoArgsConstructor
+@Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@NoArgsConstructor
+@SuperBuilder
 public class Response<T> implements Serializable {
 
-  @JsonProperty("httpStatus")
-  private HttpStatus httpStatus;
   @JsonProperty("messages")
   private List<Message> messages;
   @JsonProperty("payload")

@@ -5,17 +5,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
+/**
+ * Represents a potential error or any information that will be return to the caller.
+ */
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
+@Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@NoArgsConstructor
 public class Message implements Serializable {
+
   @JsonProperty("code")
   private String code;
   @JsonProperty("description")
