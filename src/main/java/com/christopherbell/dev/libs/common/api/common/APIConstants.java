@@ -1,6 +1,7 @@
 package com.christopherbell.dev.libs.common.api.common;
 
-public class APIConstants {
+public final class APIConstants {
+
   private APIConstants() {
   }
 

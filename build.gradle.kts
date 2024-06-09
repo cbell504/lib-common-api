@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.christopherbell.dev"
-version = "2024.06.08.02"
+version = "2024.06.08.03"
 
 dependencies {
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
@@ -13,8 +13,10 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework/spring-web
     implementation("org.springframework:spring-web:6.1.8")
 
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+    testImplementation("org.springframework.boot:spring-boot-starter-test:3.3.0")
+    testImplementation(platform("org.junit:junit-bom:5.10.2"))
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
 }
 
 java {
