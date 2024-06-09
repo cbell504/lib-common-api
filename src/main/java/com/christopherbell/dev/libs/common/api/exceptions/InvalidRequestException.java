@@ -2,6 +2,9 @@ package com.christopherbell.dev.libs.common.api.exceptions;
 
 import lombok.Builder;
 
+/**
+ * Exception to throw if there is missing or incorrect data for a request.
+ */
 @Builder
 public class InvalidRequestException extends Exception {
 
