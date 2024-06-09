@@ -4,8 +4,8 @@ plugins {
     `maven-publish`
 }
 
-group = "com.christopherbell.dev"
-version = "2024.06.08.04"
+group = "dev.christopherbell.libs"
+version = "2024.06.08.05"
 
 dependencies {
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
