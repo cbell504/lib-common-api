@@ -2,6 +2,9 @@ package com.christopherbell.dev.libs.common.api.exceptions;
 
 import lombok.Builder;
 
+/**
+ * Exception to throw if something already exist in our DB with some unique field.
+ */
 @Builder
 public class ResourceExistsException extends Exception {
 
