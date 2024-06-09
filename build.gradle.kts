@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.christopherbell.dev"
-version = "2024.06.08.02"
+version = "2024.06.08.03"
 
 dependencies {
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
