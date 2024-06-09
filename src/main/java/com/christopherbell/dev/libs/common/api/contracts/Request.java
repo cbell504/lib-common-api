@@ -16,6 +16,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 public abstract class Request implements Serializable {
+
   @JsonProperty("requestId")
   private UUID requestId;
 }

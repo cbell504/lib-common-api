@@ -11,6 +11,7 @@ public class RequestTest {
   @SuperBuilder
   @NoArgsConstructor
   static class RequestChild extends Request {
+
   }
 
   @Test
