@@ -8,7 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -19,7 +18,7 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @NoArgsConstructor
 @SuperBuilder
-public class Response<T> implements Serializable {
+public class Response<T> {
 
   @JsonProperty("messages")
   private List<Message> messages;

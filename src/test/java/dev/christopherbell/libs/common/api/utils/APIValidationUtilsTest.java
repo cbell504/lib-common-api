@@ -4,6 +4,8 @@ import dev.christopherbell.libs.common.api.exceptions.InvalidRequestException;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class APIValidationUtilsTest {
 
@@ -17,7 +19,7 @@ public class APIValidationUtilsTest {
   }
 
   @Test
-  public void testIsValidClientId_failure_exceptionThrow() throws InvalidRequestException {
+  public void testIsValidClientId_failure_exceptionThrow() {
 
     var exception = Assertions.assertThrows(InvalidRequestException.class, () -> {
       APIValidationUtils.isValidClientId(List.of(TEST_CLIENT_ID), "");
@@ -33,11 +35,22 @@ public class APIValidationUtilsTest {
     Assertions.assertTrue(result);
   }
 
-  @Test
-  public void testIsValidResource_failure_exceptionThrow() throws InvalidRequestException {
+  @ParameterizedTest
+  @ValueSource(strings = {"", " "})
+  public void testIsValidResource_failure(String resource) {
 
     var exception = Assertions.assertThrows(InvalidRequestException.class, () -> {
-      APIValidationUtils.isValidResource(APIConstants.VALIDATION_BAD_EMAIL, "");
+      APIValidationUtils.isValidResource(APIConstants.VALIDATION_BAD_EMAIL, resource);
+    });
+
+    Assertions.assertEquals(APIConstants.VALIDATION_BAD_EMAIL, exception.getMessage());
+  }
+
+  @Test
+  public void testIsValidResource_failure_nullResource() {
+
+    var exception = Assertions.assertThrows(InvalidRequestException.class, () -> {
+      APIValidationUtils.isValidResource(APIConstants.VALIDATION_BAD_EMAIL, null);
     });
 
     Assertions.assertEquals(APIConstants.VALIDATION_BAD_EMAIL, exception.getMessage());
