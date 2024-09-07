@@ -2,6 +2,7 @@ package dev.christopherbell.libs.common.api.utils;
 
 import dev.christopherbell.libs.common.api.exceptions.InvalidRequestException;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Represents common utils for requests.
@@ -38,7 +39,7 @@ public final class APIValidationUtils {
    */
   public static boolean isValidResource(String errorMessage, String questionableResource)
       throws InvalidRequestException {
-    if (questionableResource.isBlank()) {
+    if (Objects.isNull(questionableResource) || questionableResource.isBlank()) {
       throw new InvalidRequestException(errorMessage);
     }
     return true;
