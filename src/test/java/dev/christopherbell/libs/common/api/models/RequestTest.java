@@ -1,7 +1,6 @@
-package dev.christopherbell.libs.common.api.contracts;
+package dev.christopherbell.libs.common.api.models;
 
 import java.util.UUID;
-import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -9,10 +8,7 @@ import org.junit.jupiter.api.Test;
 public class RequestTest {
 
   @SuperBuilder
-  @NoArgsConstructor
-  static class RequestChild extends Request {
-
-  }
+  static class RequestChild extends Request {}
 
   @Test
   public void requestBuilderTest() {
@@ -27,7 +23,7 @@ public class RequestTest {
   @Test
   public void requestTest() {
     var requestId = UUID.randomUUID();
-    var request = new RequestChild();
+    var request = RequestChild.builder().build();
     request.setRequestId(requestId);
 
     Assertions.assertEquals(requestId, request.getRequestId());
