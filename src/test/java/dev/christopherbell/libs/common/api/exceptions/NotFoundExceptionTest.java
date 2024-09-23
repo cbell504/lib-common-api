@@ -3,26 +3,26 @@ package dev.christopherbell.libs.common.api.exceptions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class AccountNotFoundExceptionTest {
+public class NotFoundExceptionTest {
 
   @Test
-  public void testAccountNotFoundException() {
-    var exception = AccountNotFoundException.builder().build();
+  public void testNotFoundException() {
+    var exception = NotFoundException.builder().build();
 
     Assertions.assertNotNull(exception);
   }
 
   @Test
-  public void testAccountNotFoundExceptionWithMessage() {
-    var exception = new AccountNotFoundException("Account Not Found");
+  public void testNotFoundExceptionWithMessage() {
+    var exception = new NotFoundException("Account Not Found");
 
     Assertions.assertNotNull(exception);
     Assertions.assertEquals("Account Not Found", exception.getMessage());
   }
 
   @Test
-  public void testAccountNotFoundExceptionWithMessageAndException() {
-    var exception = new AccountNotFoundException("Account Not Found", new Exception("Another Exception"));
+  public void testNotFoundExceptionWithMessageAndException() {
+    var exception = new NotFoundException("Account Not Found", new Exception("Another Exception"));
 
     Assertions.assertNotNull(exception);
     Assertions.assertEquals("Account Not Found", exception.getMessage());
@@ -31,8 +31,8 @@ public class AccountNotFoundExceptionTest {
   }
 
   @Test
-  public void testAccountNotFoundExceptionWithException() {
-    var exception = new AccountNotFoundException(new Exception("Another Exception"));
+  public void testNotFoundExceptionWithException() {
+    var exception = new NotFoundException(new Exception("Another Exception"));
 
     Assertions.assertNotNull(exception.getCause());
     Assertions.assertEquals("Another Exception", exception.getCause().getMessage());
